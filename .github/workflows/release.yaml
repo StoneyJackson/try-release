@@ -14,8 +14,11 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       -
+        name: Tag
         uses: docker://ghcr.io/codfish/semantic-release-action
         id: semantic
         with:
